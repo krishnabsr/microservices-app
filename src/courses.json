@@ -1,24 +1,34 @@
 {
-    "airtribe" : [
+    "airtribe": [
         {
             "course": "Backend engineering",
-            "courseId" : 2,
-            "cohort" : 1,
-            "college" : "airtribe launchpad",
-            "semester" : 3,
-            "instructor" : "Sivaramakrishna",
-            "averageRating" : 9.8,
-            "studentsVoted" : 50
+            "courseId": 2,
+            "cohort": 1,
+            "college": "airtribe launchpad",
+            "semester": 3,
+            "instructor": "Sivaramakrishna",
+            "averageRating": 9.8,
+            "studentsVoted": 50
         },
         {
             "course": "Frontend engineering",
-            "courseId" : 3,
-            "cohort" : 1,
-            "college" : "airtribe launchpad",
-            "semester" : 3,
-            "instructor" : "Sivaramakrishna",
-            "averageRating" : 9.5,
-            "studentsVoted" : 30
+            "courseId": 3,
+            "cohort": 1,
+            "college": "airtribe launchpad",
+            "semester": 3,
+            "instructor": "Sivaramakrishna",
+            "averageRating": 9.5,
+            "studentsVoted": 30
+        },
+        {
+            "course": "Backend engineering",
+            "courseId": 2,
+            "cohort": 1,
+            "college": "airtribe launchpad",
+            "semester": 3,
+            "instructor": "Sivaramakrishna",
+            "averageRating": 9.8,
+            "studentsVoted": 50
         }
     ]
 }
