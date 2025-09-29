@@ -2,12 +2,32 @@ const express = require('express');
 const courseData = require('./courses.json');
 const Validator = require('./helpers/validator');
 const fs = require('fs');
+const {signup, login} = require('./controllers/authController');
+const mongoose = require("mongoose");
 
-
+require('dotenv').config();
 const app = express();
+
 app.use(express.json());
 
-const PORT = process.env.PORT || 3000;
+
+try {
+    mongoose.connect("mongodb://localhost:27017/airtribe", 
+        {useNewUrlParser: true,
+        useUnifiedTopology: true}
+    );
+    console.log("Connected to database");
+} catch(err) {
+    console.log("Error connecting to database", err);
+}
+
+// app.post('/login', (req, res) => {
+
+// })
+
+
+
+const PORT = 3000;
 
 app.get("/", (req, res) => {
     res.status(200).send("Hello world");
@@ -16,6 +36,10 @@ app.get("/", (req, res) => {
 app.get("/courses", (req,res) => {
     return res.status(200).json(courseData);
 });
+
+app.post('/register', signup);
+
+app.post('/login', login);
 
 
 app.get("/courses/:courseId", (req, res) => {
@@ -49,10 +73,24 @@ app.post('/courses', (req, res) => {
 
 
 
+// app.listen(PORT, (err) => {
+//     if (err) {
+//         console.log("Error occured and cannot start the server")
+//     } else {
+//         console.log("Server started at port " + PORT);
+//     }
+// });
+
 app.listen(PORT, (err) => {
-    if (err) {
-        console.log("Error occured and cannot start the server")
+    if(err) {
+        console.log("Error ocurred cannot start the server");
     } else {
-        console.log("Server started at port " + PORT);
+        console.log("Started the server");
     }
 });
+
+
+module.exports = app;
+
+
+
